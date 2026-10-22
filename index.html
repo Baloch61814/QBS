@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK BOUNCER SERVICES (QBS) | Premier Elite Event Security & Escort Agency</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #4facfe;
+            --accent-cyan: #00f2fe;
+            --whatsapp-green: #25d366;
+            --dark-bg: #0b0f19;
+            --card-bg: #131b2e;
+            --card-border: #1e2d4a;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --nav-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #070a12, #0d1b38, #070a12);
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-info a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+            font-size: 12.5px;
+            background: rgba(37, 211, 102, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+
+        .top-info a:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b0f19;
+            font-size: 24px;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .brand-text h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .brand-text h1 span {
+            color: var(--accent-cyan);
+        }
+
+        .brand-text p {
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 20px;
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            min-height: calc(100vh - var(--nav-height) - 50px);
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h2 span {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 13.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
+            color: #0b0f19;
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .hero-media-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .hero-media-card h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .instagram-embed-box {
+            position: relative;
+            width: 100%;
+            min-height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Section Global */
+        .section {
+            padding: 90px 20px;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header h3 span {
+            color: var(--accent-cyan);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 6px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 35px 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.15);
+        }
+
+        .service-icon {
+            font-size: 36px;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .video-info {
+            padding: 20px;
+            background: rgba(11, 15, 25, 0.6);
+        }
+
+        .video-badge {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .video-info h5 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .video-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Direct WhatsApp Buttons Section */
+        .whatsapp-section {
+            background: linear-gradient(135deg, #0d1b38, var(--card-bg));
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 45px;
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .whatsapp-section h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-section p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .wa-links-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .wa-box {
+            background: #0b0f19;
+            border: 1px solid var(--card-border);
+            padding: 20px 30px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .wa-box:hover {
+            border-color: var(--whatsapp-green);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+        }
+
+        .wa-box i {
+            font-size: 32px;
+            color: var(--whatsapp-green);
+        }
+
+        .wa-box-text {
+            text-align: left;
+        }
+
+        .wa-box-text span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .wa-box-text strong {
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Booking Form */
+        .booking-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 45px;
+            position: relative;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0b0f19;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #070a12;
+            border-top: 1px solid var(--card-border);
+            padding: 50px 20px 25px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .nav-links {
+                position: fixed;
+                top: var(--nav-height);
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - var(--nav-height));
+                background: #0b0f19;
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.3s ease;
+            }
+            .nav-links.active { left: 0; }
+            .mobile-toggle { display: block; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div><i class="fa-solid fa-shield-halved"></i> Quick Bouncer Services (QBS) — Elite Security Vendor</div>
+        <div class="top-info">
+            <a href="https://wa.me/923150346701?text=Hello%20QBS%20Team,%20I%20want%20to%20inquire%20about%20bouncer%20booking." target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> +92 315 0346701
+            </a>
+            <a href="https://wa.me/923242480051?text=Hello%20QBS%20Team,%20I%20want%20to%20inquire%20about%20bouncer%20booking." target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> +92 324 2480051
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>QUICK <span>BOUNCERS</span></h1>
+                    <p>QUICK BOUNCER SERVICES (QBS)</p>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About QBS</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact-wa">WhatsApp Direct</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <div class="badge-tag"><i class="fa-solid fa-bolt"></i> Rapid Security Deployment</div>
+            <h2>PREMIER EVENT SECURITY & <span>VIP ESCORT SQUAD</span></h2>
+            <p>Quick Bouncer Services (QBS) delivers elite crowd management, physically trained male/female bouncers, armed guards, and VIP escort protocols across all major events in Sindh.</p>
+            <div class="btn-group">
+                <a href="#booking" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book QBS Squad</a>
+                <a href="https://wa.me/923150346701?text=Hello%20QBS%20Team,%20I%20need%20bouncer%20security." target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-media-card">
+            <h4>Featured Live Event Reel</h4>
+            <div class="instagram-embed-box">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DB4THRoKKxt/" data-instgrm-version="14" style="background:#000; border:0; margin: 1px; max-width:540px; min-width:326px; width:calc(100% - 2px);"></blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h3>ABOUT <span>QUICK BOUNCER SERVICES</span></h3>
+            <p>Reliable, Fast & Professional Physical Security</p>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-size: 16px; line-height: 1.8;">
+            Quick Bouncer Services (QBS) specializes in delivering fast, disciplined, and imposing physical security solutions. From massive concert crowds and corporate launch events to private high-profile weddings and VIP escort missions across Karachi, Hyderabad, Jamshoro, and interior Sindh.
+        </p>
+    </section>
+
+    <!-- Direct WhatsApp Section -->
+    <section class="section" id="contact-wa">
+        <div class="whatsapp-section">
+            <h3>DIRECT WHATSAPP BOOKING & INQUIRIES</h3>
+            <p>Click on any of the numbers below to start a direct WhatsApp chat with our operations team:</p>
+
+            <div class="wa-links-wrapper">
+                <a href="https://wa.me/923150346701?text=Hello%20QBS%20Team,%20I%20want%20to%20inquire%20about%20bouncer%20booking." target="_blank" class="wa-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="wa-box-text">
+                        <span>WhatsApp Helpline 1</span>
+                        <strong>+92 315 0346701</strong>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/923242480051?text=Hello%20QBS%20Team,%20I%20want%20to%20inquire%20about%20bouncer%20booking." target="_blank" class="wa-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="wa-box-text">
+                        <span>WhatsApp Helpline 2</span>
+                        <strong>+92 324 2480051</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <h3>OUR SECURITY <span>SOLUTIONS</span></h3>
+            <p>Professional Protection Personnel</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-user-shield service-icon"></i>
+                <h4>Event Bouncers (Male & Female)</h4>
+                <p>Physically fit and trained bouncers for venue entry points, stage barriers, and crowd control.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-gun service-icon"></i>
+                <h4>Armed Protection Officers</h4>
+                <p>Licensed tactical bodyguards for high-profile individual protection and venue coverage.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-car-side service-icon"></i>
+                <h4>VIP Escort Protocol</h4>
+                <p>Escort vehicles and convoy security for celebrities, executives, and foreign guests.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-building-shield service-icon"></i>
+                <h4>Venue & Gate Guards</h4>
+                <p>Uniformed static security for wedding halls, expos, corporate offices, and private functions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section" id="booking">
+        <div class="section-header">
+            <h3>RESERVE YOUR <span>SECURITY FORCE</span></h3>
+            <p>Online Formspree Instant Booking System</p>
+        </div>
+
+        <div class="booking-container">
+            <form id="qbsBookingForm" action="https://formspree.io/f/xzedbzwa" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Client / Organizer Name *</label>
+                        <input type="text" id="name" name="Client_Name" placeholder="e.g. Ali Khan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp Number *</label>
+                        <input type="tel" id="phone" name="Phone_Number" placeholder="+92 300 1234567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="_replyto" placeholder="client@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Required Category *</label>
+                        <select id="service" name="Security_Type" required>
+                            <option value="">Select Category...</option>
+                            <option value="Male Bouncers">Male Event Bouncers</option>
+                            <option value="Female Bouncers">Female Event Bouncers</option>
+                            <option value="Armed Bodyguards">Armed Tactical Guards</option>
+                            <option value="VIP Convoy Protocol">VIP Escort Protocol</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="count">Required Guards / Bouncers Count *</label>
+                        <input type="number" id="count" name="Staff_Count" min="1" placeholder="e.g. 8 Bouncers" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Event City / Location *</label>
+                        <input type="text" id="city" name="Event_City" placeholder="e.g. Hyderabad / Karachi" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="details">Event Details & Specific Requirements</label>
+                        <textarea id="details" name="Event_Details" rows="4" placeholder="Enter event dates, timings, venue details, and specific instructions..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 15px;">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Reservation Form
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/923150346701?text=Hello%20QBS%20Team,%20I%20want%20to%20book%20bouncers." target="_blank" class="floating-wa" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand-text">
+                <h1>QUICK <span>BOUNCERS</span></h1>
+                <p>Quick Bouncer Services (QBS) — Premier Event Security Agency</p>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About QBS</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Booking</a></li>
+            </ul>
+
+            <p style="font-size: 13px; color: var(--text-muted);">&copy; 2026 Quick Bouncer Services (QBS). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Official Instagram Embed Script -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+
+    <!-- JavaScript for Mobile Navigation -->
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
